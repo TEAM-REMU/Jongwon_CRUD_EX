@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Post
 
 # 메인 페이지의 포스트를 최신순으로 불러와 템플릿에 전달
@@ -35,4 +35,12 @@ def writePost(request):
 
 # 작성된 글 하나를 렌더하는 함수
 def post(request, id):
-    return render(request, 'post.html')
+
+    # 주어진 id와 일치하는 글을 찾는다
+    # 만약 존재하지 않으면 404 에러
+    post = get_object_or_404(Post, pk=id)
+
+    post.visit()
+
+    # post에 담아서 템플릿에 전달
+    return render(request, 'post.html', {'post' : post})

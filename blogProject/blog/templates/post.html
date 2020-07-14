@@ -1,29 +1,24 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block head %}
+{% extends 'base.html' %} {% load static %} {% block head %}
 <link rel="stylesheet" href="{% static 'css/post.css' %}" />
-{% endblock %}
-
-{% block contents %}
+{% endblock %} {% block contents %}
 <div class="container">
-    <div class="postContainer">
-        <div class="post">
-            <div class="postHeader">
-                <div>
-                    <div class="title">제목</div>
-                    <div class="author">작성자</div>
-                </div>
-                <div>
-                    <div class="visitedCount">조회수 : 1</div>
-                    <div class="createdDate">2020.07.14 21:52:42</div>
-                    <div class="editedDate">2020.07.14 21:52:42</div>
-                </div>
-            </div>
-            <div class="contents">
-                <div class="body">글 내용</div>
-            </div>
+  <div class="postContainer">
+    <div class="post">
+      <div class="postHeader">
+        <div>
+          <div class="title">{{post.title}}</div>
+          <div class="author">{{post.author}}</div>
         </div>
+        <div>
+          <div class="visitedCount">조회수 : {{post.visited_count}}</div>
+          <div class="createdDate">작성일 : {{post.created_date}}</div>
+          <div class="editedDate">수정일 : {{post.edited_date}}</div>
+        </div>
+      </div>
+      <div class="contents">
+        <div class="body">{{post.body}}</div>
+      </div>
     </div>
+  </div>
 </div>
 {% endblock %}
