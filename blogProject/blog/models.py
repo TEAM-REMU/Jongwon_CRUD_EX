@@ -14,6 +14,9 @@ class Post(models.Model):
     # 수정일
     edited_date = models.DateTimeField(default=timezone.now)
 
+    # 조회수
+    visited_count = models.IntegerField()
+
     # 포스트 작성 함수
     # 글 수정시 수정 시간 자동으로 업데이트 하도록 하는 함수
     def write(self):
