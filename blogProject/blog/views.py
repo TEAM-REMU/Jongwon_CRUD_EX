@@ -8,3 +8,7 @@ def home(request):
 
     # 그리고 home.html에 넘겨준다
     return render(request, 'home.html', {'posts' : posts})
+
+# 글 쓰는 화면 렌더링 함수
+def write(request):
+    return render(request, 'write.html')
