@@ -16,7 +16,7 @@
     margin-right: 2rem;
 }
 
-.header a {
+.header nav a {
     color: white;
     font-size: 1.25rem;
     font-weight: bold;
@@ -28,7 +28,7 @@
     transform: none;
 }
 
-.header a:hover {
+.header nav a:hover {
     background-color: #70b6ff;
     transform: scale(1.08);
 }

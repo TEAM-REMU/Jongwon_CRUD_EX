@@ -14,7 +14,9 @@
 
 <body>
     <div class="header">
-        <img id="logo" src="{% static 'img/logo.png' %}" />
+        <a href="{% url 'home' %}">
+            <img id="logo" src="{% static 'img/logo.png' %}" />
+        </a>
         <nav>
             <ul>
                 <li><a href="{% url 'write' %}">글쓰기</a></li>
