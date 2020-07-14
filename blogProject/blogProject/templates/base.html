@@ -6,12 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/reset.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
     {% block head %} {% endblock %} <title>Document
     </title>
 </head>
 
 <body>
+    <div class="header">
+        <img id="logo" src="{% static 'img/logo.png' %}" />
+        <nav>
+            <ul>
+                <li><a>글쓰기</a></li>
+            </ul>
+        </nav>
+    </div>
     {% block contents %}
     {% endblock %}
 </body>

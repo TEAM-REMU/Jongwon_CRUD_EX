@@ -1,0 +1,39 @@
+.container {
+    background-color: rgb(248, 249, 250);
+    height: 100vh;
+}
+
+.header {
+    height: 80px;
+    width: 100%;
+    background-color: #8a89ff;
+    display: flex;
+    align-items: center;
+}
+
+.header nav {
+    margin-left: auto;
+    margin-right: 2rem;
+}
+
+.header a {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+    background-color: #89c3ff;
+    padding: 0.75rem 2rem;
+    border-radius: .5rem;
+    transition: all 0.15s;
+    display: block;
+    transform: none;
+}
+
+.header a:hover {
+    background-color: #70b6ff;
+    transform: scale(1.08);
+}
+
+#logo {
+    width: 50px;
+    margin-left: 1rem;
+}
