@@ -16,15 +16,18 @@ def write(request):
 # 글을 데이터베이스에 저장하는 함수
 def writePost(request):
 
+    # form으로부터 데이터 얻기
     title = request.POST.get('title')
     author = request.POST.get('author')
     body = request.POST.get('body')
 
+    # 모델 생성 후 데이터 입력
     post = Post()
     post.title = title
     post.author = author
     post.body = body
     post.visited_count = 0
+    # 모델 저장
     post.save()
 
     return redirect('/')
