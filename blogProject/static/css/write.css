@@ -1,3 +1,60 @@
-body {
-    background-color: yellow;
+.formContainer {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 10%;
+}
+
+form {
+    min-height: 500px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 16px 0px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+form .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+form input {
+    font-size: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 0.25rem;
+    border: none;
+    outline: none;
+    border-bottom: 1px lightgray solid;
+    margin-bottom: 1rem;
+}
+
+form textarea {
+    border: 1px lightgray solid;
+    outline: none;
+    margin-top: 1rem;
+    font-size: 1rem;
+    resize: none;
+}
+
+form .submitButton {
+    position: absolute;
+    bottom: 5%;
+    /* left: 5%; */
+    right: 5%;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+    background-color: #89c3ff;
+    padding: 0.75rem 2rem;
+    border-radius: .5rem;
+    transition: all 0.15s;
+}
+
+form .submitButton:hover {
+    background-color: #70b6ff;
+    transform: scale(1.08);
 }
