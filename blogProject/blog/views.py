@@ -38,9 +38,11 @@ def post(request, id):
 
     # 주어진 id와 일치하는 글을 찾는다
     # 만약 존재하지 않으면 404 에러
-    post = get_object_or_404(Post, pk=id)
-
-    post.visit()
-
-    # post에 담아서 템플릿에 전달
-    return render(request, 'post.html', {'post' : post})
+    # post = get_object_or_404(Post, pk=id)
+    try:
+        post = Post.objects.get(pk=id)
+        post.visit()
+        # post에 담아서 템플릿에 전달
+        return render(request, 'post.html', {'post' : post})
+    except Post.DoesNotExist:
+        return render(request, '404.html')
