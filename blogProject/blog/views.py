@@ -26,6 +26,8 @@ def writePost(request):
     post.title = title
     post.author = author
     post.body = body
+    # 작성한 글로 redirect 시켜주는데
+    # 그 때 1 증가하므로 0으로 초기 설정
     post.visited_count = 0
     # 모델 저장
     post.save()
@@ -38,11 +40,13 @@ def post(request, id):
 
     # 주어진 id와 일치하는 글을 찾는다
     # 만약 존재하지 않으면 404 에러
-    # post = get_object_or_404(Post, pk=id)
     try:
+        # 해당 id와 일치하는 글 있는지 확인
         post = Post.objects.get(pk=id)
+        # 해당 글 방문 함수 호출
         post.visit()
         # post에 담아서 템플릿에 전달
         return render(request, 'post.html', {'post' : post})
     except Post.DoesNotExist:
+        # 해당 글이 존재하지 않으므로 404 페이지 렌더링
         return render(request, '404.html')
