@@ -1,3 +1,8 @@
+.container {
+    background-color: rgb(248, 249, 250);
+    height: 100vh;
+}
+
 .header {
     height: 80px;
     width: 100%;
@@ -31,4 +36,53 @@
 #logo {
     width: 50px;
     margin-left: 1rem;
+}
+
+.postContainer {
+    display: flex;
+}
+
+.post {
+    background-color: white;
+    position: relative;
+    margin: 1.5rem;
+    width: 200px;
+    height: 250px;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 16px 0px;
+    transition: all 0.2s;
+    transform: none;
+}
+
+.post:hover {
+    transform: translateY(-3px);
+}
+
+.post .postHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.post .title {
+    color: black;
+    font-size: 1.2rem;
+    flex: 1;
+}
+
+.post .postHeader .author {
+    margin-left: auto;
+    font-size: 0.5rem;
+    color: gray;
+}
+
+.post .body {
+    font-size: 0.9rem;
+}
+
+.post .footer {
+    position: absolute;
+    bottom: 1rem;
+    font-size: 0.7rem;
+    color: gray;
 }
