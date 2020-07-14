@@ -8,7 +8,7 @@
 {% block contents %}
 <div class="container">
     <div class="formContainer">
-        <form>
+        <form method="POST" action="{% url 'writePost' %}">{% csrf_token %}
             <div class="title">글쓰기</div>
             <input required name="title" placeholder="제목" />
             <input required name="author" placeholder="작성자" />

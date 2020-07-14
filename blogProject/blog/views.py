@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Post
 
 # 메인 페이지의 포스트를 최신순으로 불러와 템플릿에 전달
@@ -12,3 +12,19 @@ def home(request):
 # 글 쓰는 화면 렌더링 함수
 def write(request):
     return render(request, 'write.html')
+
+# 글을 데이터베이스에 저장하는 함수
+def writePost(request):
+
+    title = request.POST.get('title')
+    author = request.POST.get('author')
+    body = request.POST.get('body')
+
+    post = Post()
+    post.title = title
+    post.author = author
+    post.body = body
+    post.visited_count = 0
+    post.save()
+
+    return redirect('/')
