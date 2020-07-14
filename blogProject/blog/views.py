@@ -30,7 +30,7 @@ def writePost(request):
     # 모델 저장
     post.save()
 
-    return redirect('/')
+    return redirect('/post/' + str(post.id))
 
 
 # 작성된 글 하나를 렌더하는 함수
