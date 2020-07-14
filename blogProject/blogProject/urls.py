@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name="home"),
     path('write/', views.write, name="write"),
-    path('writePost/', views.writePost, name="writePost")
+    path('writePost/', views.writePost, name="writePost"),
+    path('post/<int:id>', views.post, name="post")
 ]

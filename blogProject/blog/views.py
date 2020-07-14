@@ -28,3 +28,8 @@ def writePost(request):
     post.save()
 
     return redirect('/')
+
+
+# 작성된 글 하나를 렌더하는 함수
+def post(request, id):
+    return render(request, 'post.html')
