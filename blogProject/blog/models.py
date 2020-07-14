@@ -26,3 +26,8 @@ class Post(models.Model):
     # 포스트를 나타내는 문자열에 제목 반환
     def __str__(self):
         return self.title
+
+    # 해당 글에 방문할 시 조회수 올리고 저장
+    def visit(self):
+        self.visited_count += 1
+        self.save()
